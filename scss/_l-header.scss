@@ -1,0 +1,26 @@
+.header {
+  &__logo {
+    position: relative;
+    display: flex;
+    background-color: $white;
+    width: fit-content;
+    padding: 48px 0 43px 99px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(100% - 1px);
+      height: 165px;
+      aspect-ratio: 1.2484848 / 1;
+      background: url(../assets/logo-triangle.svg) center no-repeat;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+    }
+  }
+}

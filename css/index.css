@@ -282,3 +282,38 @@ ul {
   font-weight: 700;
   line-height: 120%;
 }
+
+.advantages {
+  padding: 28px 0;
+  background-color: #f6f6f6;
+}
+.advantages__cards {
+  display: flex;
+}
+.advantages__card {
+  padding: 12px 83px;
+  border-right: 3px solid #e6e6e6;
+}
+.advantages__card:first-child {
+  padding-left: 0;
+}
+.advantages__card:last-child {
+  padding-right: 0;
+  border: none;
+}
+.advantages__card-title {
+  margin: 0;
+  color: #0077de;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.advantages__card-text {
+  margin: 0;
+  color: #4b4b4b;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}

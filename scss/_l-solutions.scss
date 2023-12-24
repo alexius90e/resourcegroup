@@ -1,3 +1,85 @@
 .solutions {
-  
+  padding: 100px 0 50px;
+  background-color: $white;
+
+  &__title {
+    margin: 0 0 70px;
+  }
+
+  &__cards {
+    position: relative;
+
+    & .swiper {
+      &-button-prev,
+      &-button-next {
+        height: 33px;
+        width: 33px;
+        background: url(../assets/icons/arrow.svg) center no-repeat;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &-button-prev {
+        left: -63px;
+      }
+
+      &-button-next {
+        right: -63px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    height: 600px;
+
+    &-figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      top: 409px;
+      z-index: 2;
+      display: flex;
+      gap: 21px;
+      max-width: 293px;
+      padding-right: 20px;
+      color: $white;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 74px;
+        background-color: $blue;
+      }
+
+      &_secondary {
+        &::before {
+          width: 32px;
+          height: 74px;
+          background-color: $green;
+        }
+      }
+    }
+  }
 }

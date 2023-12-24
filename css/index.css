@@ -317,3 +317,72 @@ ul {
   font-weight: 600;
   line-height: 120%;
 }
+
+.solutions {
+  padding: 100px 0 50px;
+  background-color: #ffffff;
+}
+.solutions__title {
+  margin: 0 0 70px;
+}
+.solutions__cards {
+  position: relative;
+}
+.solutions__cards .swiper-button-prev, .solutions__cards .swiper-button-next {
+  height: 33px;
+  width: 33px;
+  background: url(../assets/icons/arrow.svg) center no-repeat;
+}
+.solutions__cards .swiper-button-prev::after, .solutions__cards .swiper-button-next::after {
+  display: none;
+}
+.solutions__cards .swiper-button-prev {
+  left: -63px;
+}
+.solutions__cards .swiper-button-next {
+  right: -63px;
+  transform: rotate(180deg);
+}
+.solutions__card {
+  position: relative;
+  height: 600px;
+}
+.solutions__card-figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.solutions__card-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.solutions__card-text {
+  position: absolute;
+  top: 409px;
+  z-index: 2;
+  display: flex;
+  gap: 21px;
+  max-width: 293px;
+  padding-right: 20px;
+  color: #ffffff;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.solutions__card-text::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 74px;
+  background-color: #0077de;
+}
+.solutions__card-text_secondary::before {
+  width: 32px;
+  height: 74px;
+  background-color: #00c7b1;
+}

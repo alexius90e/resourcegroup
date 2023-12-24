@@ -1,2 +1,22 @@
 .button {
+  padding: 21px 93px 20px 26px;
+  color: $white;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  border: none;
+  background: url(../assets/button-blue.svg) right center no-repeat;
+  transition: $baseTransition;
+  will-change: transform;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
 }

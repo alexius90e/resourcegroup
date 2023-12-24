@@ -50,41 +50,13 @@ ul {
 }
 
 .h2 {
-  margin: 0 0 32px;
-  color: #0077de;
-  font-size: 36px;
+  margin: 0 0 70px;
+  color: #4b4b4b;
+  font-size: 48px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 42px;
+  font-weight: 700;
+  line-height: normal;
 }
-@media (max-width: 768px) {
-  .h2 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-}
-@media (max-width: 576px) {
-  .h2 {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 30px;
-  }
-}
-
-.section {
-  padding: 60px 0;
-}
-@media (max-width: 768px) {
-  .section {
-    padding: 48px 0;
-  }
-}
-@media (max-width: 576px) {
-  .section {
-    padding: 32px 0;
-  }
-}
-
 .container {
   max-width: 1920px;
   margin: 0 auto;
@@ -128,6 +100,7 @@ ul {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 200;
   background-color: #0077de;
 }
 .header .container {
@@ -226,11 +199,24 @@ ul {
 }
 
 .first-screen {
-  min-height: 1000px;
   background: url(../assets/first-screen-bg.jpg) center no-repeat;
 }
 .first-screen .container {
+  position: relative;
   padding-top: 375px;
+  min-height: 1000px;
+}
+.first-screen .container::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  display: block;
+  width: 707px;
+  height: 164px;
+  background: url(../assets/button-white.svg) right center no-repeat;
+  background-size: auto 164px;
+  transform: rotate(180deg);
 }
 .first-screen__title {
   max-width: 646px;
@@ -252,4 +238,47 @@ ul {
 }
 .first-screen__buttons {
   max-width: 646px;
+}
+
+.about {
+  background-color: #ffffff;
+}
+.about .container {
+  padding-top: 124px;
+  padding-bottom: 56px;
+  background: url(../assets/about-bg.png) right center no-repeat;
+  background-size: auto 100%;
+}
+.about__title {
+  max-width: 788px;
+  margin: 0 0 50px;
+}
+.about__description {
+  max-width: 790px;
+  margin: 0 0 50px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.about__employees {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.about__employees-count {
+  color: #00c7b1;
+  font-size: 117px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.about__employees-text {
+  display: inline-block;
+  max-width: 246px;
+  color: #4b4b4b;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
 }

@@ -1,9 +1,23 @@
 .first-screen {
-  min-height: 1000px;
   background: url(../assets/first-screen-bg.jpg) center no-repeat;
 
   & .container {
+    position: relative;
     padding-top: 375px;
+    min-height: 1000px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+      display: block;
+      width: 707px;
+      height: 164px;
+      background: url(../assets/button-white.svg) right center no-repeat;
+      background-size: auto 164px;
+      transform: rotate(180deg);
+    }
   }
 
   &__title {

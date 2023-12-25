@@ -1,4 +1,4 @@
-const bannersSwiper = new Swiper(".solutions .swiper", {
+const solutionsSwiper = new Swiper(".solutions .swiper", {
   loop: true,
   spaceBetween: 41,
   breakpoints: {

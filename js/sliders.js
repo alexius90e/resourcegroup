@@ -23,3 +23,36 @@ const solutionsSwiper = new Swiper(".solutions .swiper", {
     prevEl: ".solutions .swiper-button-prev",
   },
 });
+
+const technologiesSwiper = new Swiper(".technologies .swiper", {
+  spaceBetween: 20,
+  slidesOffsetBefore: 0,
+  slidesOffsetAfter: 0,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    568: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 1,
+    },
+    992: {
+      slidesPerView: 1,
+    },
+    1440: {
+      slidesPerView: 1.29,
+      spaceBetween: 80,
+      slidesOffsetBefore: 98,
+      slidesOffsetAfter: 98,
+    },
+  },
+  navigation: {
+    nextEl: ".technologies .swiper-button-next",
+    prevEl: ".technologies .swiper-button-prev",
+  },
+  pagination: {
+    el: '.technologies .swiper-pagination',
+  },
+});

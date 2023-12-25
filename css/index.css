@@ -647,6 +647,165 @@ ul {
   background-color: #00c7b1;
 }
 
+.technologies {
+  padding: 50px 0;
+  background-color: #ffffff;
+}
+.technologies__title {
+  margin: 0 0 70px;
+}
+.technologies__cards {
+  position: relative;
+  margin: 0 -98px;
+}
+.technologies__cards-controls {
+  position: absolute;
+  bottom: -1px;
+  left: calc(99px + 76.5%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 34px 58px 34px 134px;
+  transform: translateX(-100%);
+}
+.technologies__cards-controls::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: url(../assets/button-white.svg) top right no-repeat;
+  background-size: auto 100%;
+  transform: rotate(180deg);
+}
+.technologies__cards-controls .swiper-button-prev, .technologies__cards-controls .swiper-button-next {
+  position: static !important;
+  display: block;
+  width: 33px;
+  height: 33px;
+  margin: 0;
+  background: url(../assets/icons/arrow.svg) center no-repeat;
+  transform: none;
+}
+.technologies__cards-controls .swiper-button-prev::after, .technologies__cards-controls .swiper-button-next::after {
+  display: none;
+}
+.technologies__cards-controls .swiper-button-next {
+  transform: rotate(180deg);
+}
+.technologies__cards-controls .swiper-pagination {
+  position: static !important;
+  display: flex;
+  gap: 15px;
+  width: auto !important;
+}
+.technologies__cards-controls .swiper-pagination-bullet {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 0 !important;
+  box-sizing: border-box;
+  border: 3px solid #0077de;
+  border-radius: 0;
+  background-color: #ffffff;
+  opacity: 1;
+}
+.technologies__cards-controls .swiper-pagination-bullet-active {
+  border-color: #00c7b1;
+}
+.technologies__card {
+  position: relative;
+  min-height: 600px;
+  background-color: #00c7b1;
+}
+.technologies__card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  min-height: inherit;
+  margin: 0;
+  padding: 0;
+  background-color: #0077de;
+}
+.technologies__card-image img {
+  display: block;
+  width: 100%;
+  min-height: inherit;
+  object-fit: cover;
+}
+.technologies__card-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(215, 215, 215, 0.8);
+  transition: all ease-in-out 0.15s;
+}
+.technologies__card-content {
+  position: relative;
+  z-index: 2;
+  padding: 107px 83px 0;
+}
+.technologies__card-title {
+  max-width: 764px;
+  min-height: 76px;
+  margin: 0 0 40px;
+  color: #ffffff;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+}
+.technologies__card-advantages {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  min-height: 220px;
+  margin: 0 0 50px;
+}
+.technologies__card-advantage {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.technologies__card-advantage-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+.technologies__card-advantage-text {
+  color: #ffffff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+.technologies__card-buttons .button {
+  padding: 22px 160px 21px 42px;
+  background-image: url(../assets/button-white.svg);
+  color: #d7d7d7;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+  text-transform: uppercase;
+  transition: all ease-in-out 0.15s;
+}
+.technologies .swiper-slide-active .technologies__card-image::before {
+  background-color: rgba(0, 119, 222, 0.8);
+}
+.technologies .swiper-slide-active .technologies__card-buttons .button {
+  color: #0077de;
+}
+
 .priorities {
   padding: 50px 0;
   background-color: #ffffff;

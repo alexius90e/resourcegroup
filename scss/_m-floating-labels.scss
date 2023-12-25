@@ -1,0 +1,103 @@
+$form-floating-padding-x: 10px;
+$form-floating-padding-y: 10px;
+$form-floating-height: 80px;
+$form-floating-line-height: 20px;
+$form-floating-input-padding-t: 10px;
+$form-floating-input-padding-b: 10px;
+$form-floating-label-height: 60px;
+
+.form-floating {
+  position: relative;
+
+  > .form-control,
+  > .form-control-plaintext,
+  > .form-select {
+    height: $form-floating-height;
+    min-height: $form-floating-height;
+    line-height: $form-floating-line-height;
+  }
+
+  > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    padding: $form-floating-padding-y $form-floating-padding-x;
+    overflow: hidden;
+    text-align: start;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: $baseTransition;
+  }
+
+  > .form-control,
+  > .form-control-plaintext {
+    padding: $form-floating-padding-y $form-floating-padding-x;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding-top: $form-floating-input-padding-t;
+      padding-bottom: $form-floating-input-padding-b;
+    }
+
+    &:-webkit-autofill {
+      padding-top: $form-floating-input-padding-t;
+      padding-bottom: $form-floating-input-padding-b;
+    }
+  }
+
+  > .form-select {
+    padding-top: $form-floating-input-padding-t;
+    padding-bottom: $form-floating-input-padding-b;
+  }
+
+  > .form-control:focus,
+  > .form-control:not(:placeholder-shown),
+  > .form-control-plaintext,
+  > .form-select {
+    ~ label {
+      color: rgba($grey200, 0.5);
+      // transform: $form-floating-label-transform;
+
+      &::after {
+        position: absolute;
+        inset: $form-floating-padding-y ($form-floating-padding-x * 0.5);
+        z-index: -1;
+        height: $form-floating-label-height;
+        content: "";
+        background-color: $grey200;
+        border-radius: 5px;
+      }
+    }
+  }
+  // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
+  > .form-control:-webkit-autofill {
+    ~ label {
+      color: rgba($grey200, 0.5);
+      // transform: $form-floating-label-transform;
+    }
+  }
+
+  > .form-control-plaintext {
+    ~ label {
+      border-width: 0px 0;
+    }
+  }
+
+  > :disabled ~ label,
+  > .form-control:disabled ~ label {
+    color: $black;
+
+    &::after {
+      background-color: $grey200;
+    }
+  }
+}

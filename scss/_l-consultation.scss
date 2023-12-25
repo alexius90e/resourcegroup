@@ -1,3 +1,37 @@
 .consultation {
-  
+  padding: 50px 0 100px;
+  background-color: $white;
+
+  &__title {
+    margin: 0 0 47px;
+  }
+
+  &__description {
+    max-width: 976px;
+    margin: 0 0 67px;
+    color: $black;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &__form {
+    &-fieldset {
+    }
+
+    &-input,
+    & input {
+      display: inline-block;
+      padding: 30px;
+      color: $black;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      border: none;
+      outline: rgba($color: $grey200, $alpha: 0.5);
+      background-color: $grey100;
+    }
+  }
 }

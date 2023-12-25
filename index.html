@@ -241,8 +241,100 @@
           </div>
         </div>
       </section>
+
+      <section class="consultation">
+        <div class="container">
+          <h2 class="consultation__title h2">Нужна консультация?</h2>
+          <p class="consultation__description">
+            Позвоните нам по телефону +7 (495) 646-08-39 или закажите звонок, воспользовавшись
+            формой ниже. Мы будем рады ответить на ваши вопросы!
+          </p>
+          <form class="consultation__form">
+            <fieldset class="consultation__form-fieldset">
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">Email address</label>
+              </div>
+              <input class="consultation__form-input" type="text" placeholder="Ваш имя" />
+              <input class="consultation__form-input" type="tel" placeholder="Ваш номер телефона" />
+              <button class="button">Перезвоните мне</button>
+            </fieldset>
+            <fieldset class="consultation__form-fieldset">
+              <label>
+                <input type="checkbox" checked />
+                <span>Я согласен с политикой конфиденциальности</span>
+              </label>
+            </fieldset>
+          </form>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="container">
+        <aside class="footer__sidebar">
+          <div class="footer__sidebar-logo">
+            <a class="footer__sidebar-logo-link" href="./">
+              <img class="footer__sidebar-logo-image" src="./assets/logo-footer.svg" alt="logo" />
+            </a>
+          </div>
+
+          <div class="footer__sidebar-address">
+            127287, Россия, г. Москва, 2я Хуторская ул., д. 38А, стр. 14, БЦ «Мирлэнд»
+          </div>
+
+          <div class="footer__sidebar-email">
+            <a href="">info@resourcegroup.ru</a>
+          </div>
+
+          <div class="footer__sidebar-social">
+            <a class="footer__sidebar-social-vk" href=""></a>
+            <a class="footer__sidebar-social-tg" href=""></a>
+          </div>
+
+          <div class="footer__sidebar-copyrights">© ООО «Ресурсгрупп». Все права защищены</div>
+        </aside>
+
+        <div class="footer__info">
+          <div class="footer__info-content">
+            <nav class="footer__nav">
+              <a href="" class="footer__nav-link">Бизнес направления</a>
+              <a href="" class="footer__nav-link">Технологии</a>
+              <a href="" class="footer__nav-link">о холдинге</a>
+              <a href="" class="footer__nav-link">Карьера</a>
+              <a href="" class="footer__nav-link">Пресс-центр</a>
+              <a href="" class="footer__nav-link">Контакты</a>
+            </nav>
+
+            <div class="footer__contacts">
+              <span class="footer__contacts-hotline">
+                Горячая линия для клиентов: 8 800 500 2625
+              </span>
+              <button class="footer__contacts-account">Вход в «Авто-контроль»</button>
+              <a class="footer__contacts-phone" href="tel:+74959297021"> +7 (495) 929-70-21 </a>
+              <a class="footer__contacts-app" href=""
+                >Мобильное приложение «Авто-контроль» для Android</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__bottom-content">
+            <a class="footer__bottom-link" href="#">Карта сайта</a>
+            <a class="footer__bottom-link" href="#">Политика конфиденциальности</a>
+            <a class="footer__bottom-link footer__bottom-link_developer" href="#">
+              <img src="./assets/artus-logo.png" alt="artus" />
+              Создание сайтов - Интернет-агентство «Артус»
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -117,7 +117,12 @@
       height: 19px;
       border: none;
       background: url(../assets/icons/burger.svg) center no-repeat;
+      transition: all ease-in-out 0.2s;
       cursor: pointer;
+
+      &.active {
+        background-image: url(../assets/icons/close.svg);
+      }
     }
   }
 }

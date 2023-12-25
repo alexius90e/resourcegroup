@@ -1,10 +1,14 @@
-$form-floating-padding-x: 10px;
-$form-floating-padding-y: 10px;
-$form-floating-height: 80px;
-$form-floating-line-height: 20px;
-$form-floating-input-padding-t: 10px;
-$form-floating-input-padding-b: 10px;
-$form-floating-label-height: 60px;
+$form-floating-height: 82px !default;
+$form-floating-line-height: 1.25 !default;
+$form-floating-padding-x: 30px !default;
+$form-floating-padding-y: 13px !default;
+$form-floating-input-padding-t: 13px !default;
+$form-floating-input-padding-b: 13px !default;
+$form-floating-label-height: 1.5em !default;
+$form-floating-label-opacity: 0.65 !default;
+$form-floating-label-transform: scale(0.85) translateY(-4px) translateX(2.4px) !default;
+$form-floating-label-disabled-color: $green !default;
+$form-floating-transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out !default;
 
 .form-floating {
   position: relative;
@@ -15,6 +19,15 @@ $form-floating-label-height: 60px;
     height: $form-floating-height;
     min-height: $form-floating-height;
     line-height: $form-floating-line-height;
+    box-sizing: border-box;
+    color: $grey800;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+    outline: none;
+    background-color: $grey100;
   }
 
   > label {
@@ -25,13 +38,18 @@ $form-floating-label-height: 60px;
     height: 100%;
     padding: $form-floating-padding-y $form-floating-padding-x;
     overflow: hidden;
+    color: $grey800;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
     text-align: start;
     text-overflow: ellipsis;
     white-space: nowrap;
     pointer-events: none;
-    border: 1px solid transparent;
+    border: 0 solid transparent;
     transform-origin: 0 0;
-    transition: $baseTransition;
+    transition: $form-floating-transition;
   }
 
   > .form-control,
@@ -47,7 +65,7 @@ $form-floating-label-height: 60px;
       padding-top: $form-floating-input-padding-t;
       padding-bottom: $form-floating-input-padding-b;
     }
-
+ 
     &:-webkit-autofill {
       padding-top: $form-floating-input-padding-t;
       padding-bottom: $form-floating-input-padding-b;
@@ -64,8 +82,8 @@ $form-floating-label-height: 60px;
   > .form-control-plaintext,
   > .form-select {
     ~ label {
-      color: rgba($grey200, 0.5);
-      // transform: $form-floating-label-transform;
+      color: rgba($color: $grey800, $alpha: $form-floating-label-opacity);
+      transform: $form-floating-label-transform;
 
       &::after {
         position: absolute;
@@ -73,31 +91,30 @@ $form-floating-label-height: 60px;
         z-index: -1;
         height: $form-floating-label-height;
         content: "";
-        background-color: $grey200;
-        border-radius: 5px;
+        border-radius: 0;
       }
     }
   }
-  // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
+
   > .form-control:-webkit-autofill {
     ~ label {
-      color: rgba($grey200, 0.5);
-      // transform: $form-floating-label-transform;
+      color: rgba($color: $grey100, $alpha: 1);
+      transform: $form-floating-label-transform;
     }
   }
 
   > .form-control-plaintext {
     ~ label {
-      border-width: 0px 0;
+      border-width: 0;
     }
   }
 
   > :disabled ~ label,
   > .form-control:disabled ~ label {
-    color: $black;
+    color: $form-floating-label-disabled-color;
 
     &::after {
-      background-color: $grey200;
+      background-color: $grey100;
     }
   }
 }

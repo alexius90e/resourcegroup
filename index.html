@@ -687,22 +687,34 @@
           </p>
           <form class="consultation__form">
             <fieldset class="consultation__form-fieldset">
+              
               <div class="form-floating mb-3">
                 <input
-                  type="email"
+                  type="name"
                   class="form-control"
-                  id="floatingInput"
-                  placeholder="name@example.com"
+                  id="consultationName"
+                  placeholder="Ваше имя"
                 />
-                <label for="floatingInput">Email address</label>
+                <label for="consultationName">Ваше имя</label>
               </div>
-              <input class="consultation__form-input" type="text" placeholder="Ваш имя" />
-              <input class="consultation__form-input" type="tel" placeholder="Ваш номер телефона" />
+
+              <div class="form-floating mb-3">
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="consultationPhone"
+                  name="phone"
+                  placeholder="Ваш номер телефона"
+                />
+                <label for="consultationPhone">Ваш номер телефона</label>
+              </div>
+
               <button class="button">Перезвоните мне</button>
             </fieldset>
             <fieldset class="consultation__form-fieldset">
-              <label>
-                <input type="checkbox" checked />
+              <label class="consultation__form-checkbox">
+                <input type="checkbox" name="agree" checked />
+                <span class="consultation__form-checkbox-checkmark"></span>
                 <span>Я согласен с политикой конфиденциальности</span>
               </label>
             </fieldset>

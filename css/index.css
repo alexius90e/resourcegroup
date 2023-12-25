@@ -84,6 +84,7 @@ ul {
   text-transform: uppercase;
   border: none;
   background: url(../assets/button-blue.svg) right center no-repeat;
+  background-size: auto 100%;
   transition: all ease-in-out 0.15s;
   will-change: transform;
   cursor: pointer;
@@ -101,9 +102,18 @@ ul {
 .form-floating > .form-control,
 .form-floating > .form-control-plaintext,
 .form-floating > .form-select {
-  height: 80px;
-  min-height: 80px;
-  line-height: 20px;
+  height: 82px;
+  min-height: 82px;
+  line-height: 1.25;
+  box-sizing: border-box;
+  color: #828282;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+  outline: none;
+  background-color: #f6f6f6;
 }
 .form-floating > label {
   position: absolute;
@@ -111,19 +121,24 @@ ul {
   left: 0;
   z-index: 2;
   height: 100%;
-  padding: 10px 10px;
+  padding: 13px 30px;
   overflow: hidden;
+  color: #828282;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
   text-align: start;
   text-overflow: ellipsis;
   white-space: nowrap;
   pointer-events: none;
-  border: 1px solid transparent;
+  border: 0 solid transparent;
   transform-origin: 0 0;
-  transition: all ease-in-out 0.15s;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 .form-floating > .form-control,
 .form-floating > .form-control-plaintext {
-  padding: 10px 10px;
+  padding: 13px 30px;
 }
 .form-floating > .form-control::-ms-input-placeholder, .form-floating > .form-control-plaintext::-ms-input-placeholder {
   color: transparent;
@@ -135,49 +150,50 @@ ul {
 .form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown),
 .form-floating > .form-control-plaintext:focus,
 .form-floating > .form-control-plaintext:not(:placeholder-shown) {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 .form-floating > .form-control:-webkit-autofill,
 .form-floating > .form-control-plaintext:-webkit-autofill {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 .form-floating > .form-select {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 .form-floating > .form-control:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
 .form-floating > .form-control-plaintext ~ label,
 .form-floating > .form-select ~ label {
-  color: rgba(230, 230, 230, 0.5);
+  color: rgba(130, 130, 130, 0.65);
+  transform: scale(0.85) translateY(-4px) translateX(2.4px);
 }
 .form-floating > .form-control:focus ~ label::after,
 .form-floating > .form-control:not(:placeholder-shown) ~ label::after,
 .form-floating > .form-control-plaintext ~ label::after,
 .form-floating > .form-select ~ label::after {
   position: absolute;
-  inset: 10px 5px;
+  inset: 13px 15px;
   z-index: -1;
-  height: 60px;
+  height: 1.5em;
   content: "";
-  background-color: #e6e6e6;
-  border-radius: 5px;
+  border-radius: 0;
 }
 .form-floating > .form-control:-webkit-autofill ~ label {
-  color: rgba(230, 230, 230, 0.5);
+  color: #f6f6f6;
+  transform: scale(0.85) translateY(-4px) translateX(2.4px);
 }
 .form-floating > .form-control-plaintext ~ label {
-  border-width: 0px 0;
+  border-width: 0;
 }
 .form-floating > :disabled ~ label,
 .form-floating > .form-control:disabled ~ label {
-  color: #4b4b4b;
+  color: #00c7b1;
 }
 .form-floating > :disabled ~ label::after,
 .form-floating > .form-control:disabled ~ label::after {
-  background-color: #e6e6e6;
+  background-color: #f6f6f6;
 }
 
 .header {
@@ -891,17 +907,48 @@ ul {
   font-weight: 400;
   line-height: 130%;
 }
-.consultation__form-input, .consultation__form input {
-  display: inline-block;
-  padding: 30px;
-  color: #4b4b4b;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+.consultation__form-fieldset {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
   border: none;
-  outline: rgba(230, 230, 230, 0.5);
-  background-color: #f6f6f6;
+}
+.consultation__form-fieldset .form-floating {
+  flex: 1 1 auto;
+}
+.consultation__form-fieldset .form-floating .form-control {
+  width: 100%;
+}
+.consultation__form-fieldset .button {
+  flex: 0 0 auto;
+  padding: 29px 139px 32px 37px;
+  font-size: 18px;
+  line-height: 21px;
+}
+.consultation__form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 60px;
+}
+.consultation__form-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.consultation__form-checkbox-checkmark {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 21px;
+  background: url(../assets/checkbox.svg) center no-repeat;
+}
+.consultation__form-checkbox input:checked ~ .consultation__form-checkbox-checkmark {
+  background-image: url(../assets/checkbox-checked.svg);
 }
 
 .main-menu {
